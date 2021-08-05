@@ -37,5 +37,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float RotationRate;
 
+	UFUNCTION(BlueprintCallable)
 	void PlayCustomDeath();
+
+	UFUNCTION(BlueprintNativeEvent)
+	void OnOverlap(AActor* OverlappedActor, AActor* OtherActor);
 };

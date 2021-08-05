@@ -28,10 +28,25 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly)
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UStaticMeshComponent* Mesh;
-	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly)
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	USpringArmComponent* SpringArm;
-	UPROPERTY(VisibleAnyWhere, BlueprintReadOnly)
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UCameraComponent* Camera;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float MovementForce;
+
+	void MoveUp(float Value);
+	void MoveRight(float Value);
+
+	UPROPERTY(EditAnywhere, BlueprintreadWrite)
+	float JumpImpulse;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void Jump();
 };
